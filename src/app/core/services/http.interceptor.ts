@@ -30,11 +30,7 @@ export class HttpsInterceptor implements HttpInterceptor {
       return EMPTY;
     }
     let tokenizedRequest: HttpRequest<any>;
-    tokenizedRequest = request.clone({
-      setParams: {
-        v: '2',
-      },
-    });
+    tokenizedRequest = request.clone({});
 
     return next.handle(tokenizedRequest).pipe(
       timeout(30000),
@@ -62,6 +58,7 @@ export class HttpsInterceptor implements HttpInterceptor {
     }
 
     if (error instanceof HttpErrorResponse && error.status === 400) {
+      this.alertService.showError(error.error);
       return EMPTY;
     }
     if (error.message) {
