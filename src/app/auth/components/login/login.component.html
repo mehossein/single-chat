@@ -2,12 +2,7 @@
   <div class="bg-white w-96 rounded-md shadow-md flex flex-col p-5">
     <div class="w-full h-10 border-b-2 border-zinc-100 text-xl pr-2">ورود</div>
     <div class="flex flex-col w-full h-full">
-      <form
-        [formGroup]="loginForm"
-        (ngSubmit)="onLogin()"
-        novalidate
-        autocomplete="off"
-      >
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()" novalidate>
         <div class="w-full h-18 flex justify-around items-center relative">
           <p class="w-3/12">نام کاربری :</p>
           <input
