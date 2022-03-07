@@ -1,0 +1,11 @@
+﻿@import url(fontiran.css); /* لینک فایلی که وظیفه بارگذاری فونت ها را برعهده دارد */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: IRANSans !important;
+}
+
+body {
+  background-color: #f5f5f5;
+}
