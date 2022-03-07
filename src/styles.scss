@@ -1,2 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-@import url('~ngx-toastr/toastr');
+@import url("tailwindcss/base");
+@import url("tailwindcss/utilities");
+@import url("tailwindcss/components");
+@import url("./assets/css/style.css");
+@import url("~ngx-toastr/toastr");
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
