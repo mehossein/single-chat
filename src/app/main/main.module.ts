@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
-import { ChatComponent } from './component/chat/chat.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 const routes: Routes = [
   {

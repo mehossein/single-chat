@@ -7,12 +7,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { SocketModule } from './socket/socket.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     SharedModule,
+    SocketModule,
+    BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ToastrModule.forRoot(),

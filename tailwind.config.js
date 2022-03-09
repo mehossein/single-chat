@@ -6,7 +6,12 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: { max: "360px" },
+      },
+      fontSize: { "2xs": ".5rem" },
+    },
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };

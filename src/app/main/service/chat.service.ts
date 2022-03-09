@@ -1,32 +1,21 @@
+import { SOCKET } from './../../socket/models/socket';
 import { Observable } from 'rxjs';
+import { Socket } from 'ngx-socket-io';
 import { Injectable, Injector } from '@angular/core';
 import { ServiceBase } from 'src/app/shared/classes/service-base';
-
 @Injectable({
   providedIn: 'root',
 })
 export class ChatService extends ServiceBase {
-  constructor(injector: Injector) {
+  constructor(injector: Injector, public socket: Socket) {
     super(injector);
   }
 
-  sendRequest(): Observable<any> {
-    return this.get$('');
+  getLink(newLink: boolean = false): Observable<any> {
+    return this.get$('link', [{ key: 'new_link', value: newLink }]);
   }
 
-  disconnect(model: any): Observable<any> {
-    return this.post$('', model);
-  }
-
-  getChat(model: any): Observable<any> {
-    return this.post$('', model);
-  }
-
-  sendChat(model: any): Observable<any> {
-    return this.post$('', model);
-  }
-
-  getLink(): Observable<any> {
-    return this.get$('link');
+  fetch(arg: any) {
+    this.socket.emit(SOCKET.EVENT, arg);
   }
 }
